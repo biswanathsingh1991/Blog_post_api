@@ -1,0 +1,7 @@
+{% extends 'core_base.html' %} {% block middle %}
+<div class="">
+    {% if list_blog %} {% for blog in list_blog %}
+    <a href="{% url 'blog:detailblogview' blog.pk %}">
+        <h2>{{blog}}</h2></a>{% endfor %} {% endif %}
+</div>
+{% endblock %}
