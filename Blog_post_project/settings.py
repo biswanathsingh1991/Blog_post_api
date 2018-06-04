@@ -26,9 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'blog',
     'rest_framework',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -123,9 +122,6 @@ MEDIA_URL = "/media/"
 
 
 # authentication url
-
-LOGIN_REDIRECT_URL = '/home'
-LOGOUT_REDIRECT_URL = '/login'
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

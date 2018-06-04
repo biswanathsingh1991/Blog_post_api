@@ -1,8 +1,0 @@
-{% extends 'core_base.html' %}{% load static %} {% block link %}
-<link rel="stylesheet" href="{% static 'core/css/core_home.css' %}" type="text/css">{% endblock %} {% block title %}
-
-
-<title>Home</title>{% endblock %} {% block navbar-link %} {% endblock %} {% block left %} {% if request.user.is_authenticated %}
-<div class="left_menu">
-    <a href="{% url 'blog:home' %}" class="left_icon_color">Blog</a>
-</div>{% endif %} {% endblock %}
