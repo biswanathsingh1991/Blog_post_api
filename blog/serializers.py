@@ -1,12 +1,23 @@
 from rest_framework import serializers
-from . models import Bucketlist
+from . models import Blog, BlogComment, Like
 
 
-class BucketlistSerializer(serializers.ModelSerializer):
-    """Serializer to map the Model instance into JSON format."""
+class BlogSerializer(serializers.ModelSerializer):
 
     class Meta:
-        """Meta class to map serializer's fields with the model fields."""
-        model = Bucketlist
-        fields = ('id', 'name', 'date_created', 'date_modified')
-        read_only_fields = ('date_created', 'date_modified')
+        model = Blog
+        fields = "__all__"
+
+
+class BlogCommentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = BlogComment
+        fields = "__all__"
+
+
+class LikeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Like
+        fields = "__all__"

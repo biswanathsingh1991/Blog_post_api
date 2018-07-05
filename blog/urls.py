@@ -1,10 +1,15 @@
 from django.urls import path
-from .views import CreateView
-from rest_framework.urlpatterns import format_suffix_patterns
-
+from django.shortcuts import include
+from rest_framework import router
 
 app_name = 'blog'
 urlpatterns = [
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+
+
+
+    # commented
     # path('home/', HomeView.as_view(), name='home'),
     # path('creatblog/', Createblog.as_view(), name='createblog'),
     # path('updateblog/<int:pk>/', UpdateBlog.as_view(), name='updateblog'),
@@ -13,7 +18,5 @@ urlpatterns = [
     #      name='detailblogview'),
     # path('deleteblogview/<int:pk>/', DeleteBlogView.as_view(),
     #      name='deleteblogview'),
-    path('bucketlists/', CreateView.as_view(), name="create"),
+    # path('bucketlists/', CreateView.as_view(), name="create"),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns)
